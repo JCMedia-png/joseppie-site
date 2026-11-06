@@ -60,5 +60,28 @@ footer{margin-top:40px;font-size:.85rem;color:var(--muted)}
     <p class="closer">Dudeeeeee... to all my party people, <strong>be there or be square motherfuckers.</strong></p>
   </section>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+(function(){
+  if(!window.confetti) return;
+  const colors=['#ff2e88','#ffb703','#fff6ea','#9b5cff','#2ee6d6'];
+  const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Opening burst from both bottom corners
+  const burst=(o)=>confetti(Object.assign({particleCount:calm?40:110,spread:75,startVelocity:55,colors,disableForReducedMotion:false,scalar:1.05},o));
+  burst({angle:60,origin:{x:0,y:.9}}); burst({angle:120,origin:{x:1,y:.9}});
+  setTimeout(()=>burst({angle:90,spread:120,origin:{x:.5,y:.35},particleCount:calm?30:90}),450);
+  // Gentle drizzle from the top
+  if(!calm){
+    setInterval(()=>{ if(document.hidden) return;
+      confetti({particleCount:2,startVelocity:0,ticks:400,gravity:.55,drift:Math.random()-.5,origin:{x:Math.random(),y:-.05},colors,scalar:.9});
+    },220);
+  }
+  // Tap anywhere for more
+  addEventListener('pointerdown',e=>{
+    if(e.target.closest('video')) return;
+    confetti({particleCount:60,spread:70,startVelocity:35,colors,origin:{x:e.clientX/innerWidth,y:e.clientY/innerHeight}});
+  });
+})();
+</script>
 </body>
 </html>
