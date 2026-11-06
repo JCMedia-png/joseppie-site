@@ -2,227 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jolly Joey's Pregame Extravaganza</title>
-<meta name="description" content="Friday Nov 6, 6 PM, downtown Fort Lauderdale. Riddles, challenges, mystery bars, and a 9:30 comedy show.">
+<meta name="description" content="Be there or be square. Tonight, 6 PM.">
 <meta property="og:title" content="Jolly Joey's Pregame Extravaganza">
-<meta property="og:description" content="Mystery bar crawl. Riddles. Timed challenges. Points. Comedy show at 9:30.">
-<meta property="og:image" content="img/party-1.jpg">
+<meta property="og:description" content="Be there or be square. Let's fucking party.">
+<meta name="theme-color" content="#110a1c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#110a1c; --bg2:#1b1030; --ink:#fff6ea; --muted:#bfb2d6;
-  --pink:#ff2e88; --gold:#ffb703; --line:rgba(255,246,234,.14);
-}
+:root{--bg:#110a1c;--card:#1b1030;--ink:#fff6ea;--muted:#bfb2d6;--pink:#ff2e88;--gold:#ffb703;--line:rgba(255,246,234,.14)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:500 1.0625rem/1.55 "Bricolage Grotesque",system-ui,sans-serif;overflow-x:hidden}
-img{display:block;max-width:100%}
-.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
-em.s{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--gold);letter-spacing:0}
-.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);font-weight:800}
-
-/* hero */
-.hero{position:relative;min-height:100svh;display:grid;align-items:end;padding:96px 0 56px;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
-  radial-gradient(60% 50% at 80% 20%,rgba(255,46,136,.45),transparent 70%),
-  radial-gradient(50% 45% at 10% 90%,rgba(255,183,3,.28),transparent 70%),var(--bg)}
-.hero-photo{position:absolute;right:0;top:0;bottom:0;width:min(52vw,640px);z-index:-1;
-  -webkit-mask-image:linear-gradient(to left,#000 55%,transparent);mask-image:linear-gradient(to left,#000 55%,transparent)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;opacity:.9}
-h1{font-weight:800;font-size:clamp(3rem,10vw,8.5rem);line-height:.9;letter-spacing:-.045em;max-width:11ch}
-.hero p.lede{margin-top:22px;font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--muted);max-width:34ch}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.chip{border:1px solid var(--line);background:rgba(255,246,234,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  padding:9px 16px;border-radius:999px;font-size:.95rem}
-.count{display:flex;gap:14px;margin-top:34px}
-.count div{min-width:76px}
-.count b{display:block;font-size:clamp(2rem,5vw,3.2rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.count span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
-section{padding:96px 0;border-top:1px solid var(--line)}
-h2{font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1;letter-spacing:-.035em;margin:12px 0 18px;max-width:16ch}
-.sub{color:var(--muted);max-width:52ch}
-
-/* how it works */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:44px}
-.step{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px}
-.step .n{font-size:3rem;font-weight:800;line-height:1;color:var(--pink);letter-spacing:-.04em}
-.step h3{font-size:1.3rem;margin:14px 0 6px;letter-spacing:-.01em}
-.step p{color:var(--muted);font-size:.98rem}
-
-/* timeline */
-.tl{margin-top:44px;display:grid;gap:0}
-.row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.row time{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.row h3{font-size:1.25rem}
-.row p{color:var(--muted);font-size:.98rem}
-.row.big h3{color:var(--gold)}
-.tag{display:inline-block;margin-left:8px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#fff;padding:3px 9px;border-radius:999px;vertical-align:middle}
-
-/* gallery */
-.gal{margin-top:44px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-.gal figure{position:relative;border-radius:22px;overflow:hidden;background:var(--bg2);grid-column:span 4;aspect-ratio:4/5}
-.gal figure:nth-child(1){grid-column:span 7;aspect-ratio:auto}
-.gal figure:nth-child(2){grid-column:span 5}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.gal figure:hover img{transform:scale(1.035)}
-.gal figcaption{position:absolute;left:14px;bottom:14px;right:14px;font-size:.9rem;padding:8px 12px;border-radius:12px;
-  background:rgba(17,10,28,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-
-/* points */
-.pts{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.pt{display:flex;justify-content:space-between;gap:12px;padding:18px 20px;border-radius:16px;border:1px solid var(--line)}
-.pt b{color:var(--gold);white-space:nowrap}
-.rules{margin-top:40px;columns:2 280px;column-gap:40px;color:var(--muted)}
-.rules li{margin:0 0 12px 1.1em;break-inside:avoid}
-.rules li::marker{color:var(--pink)}
-
-footer{padding:56px 0 72px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
-footer b{color:var(--ink)}
-
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
-
-@media (max-width:760px){
-  .hero{align-items:end;padding-top:48vh}
-  .hero-photo{width:100%;height:62vh;bottom:auto;-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent);mask-image:linear-gradient(to bottom,#000 50%,transparent)}
-  .gal figure,.gal figure:nth-child(1),.gal figure:nth-child(2){grid-column:span 12;aspect-ratio:4/5}
-  .row{grid-template-columns:84px 1fr;gap:14px}
-  .row time{font-size:1.2rem}
-  section{padding:72px 0}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .reveal{transform:none;transition:opacity .2s ease}
-  .gal img{transition:none}
-}
+body{min-height:100svh;color:var(--ink);text-align:center;font:500 1.0625rem/1.5 "Bricolage Grotesque",system-ui,sans-serif;
+  background:radial-gradient(90% 45% at 50% 0%,rgba(255,46,136,.38),transparent 70%),radial-gradient(80% 40% at 50% 100%,rgba(255,183,3,.18),transparent 70%),var(--bg);background-attachment:fixed}
+main{width:min(520px,100% - 32px);margin:0 auto;padding:max(48px,env(safe-area-inset-top)) 0 64px}
+em.s{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--gold)}
+h1{font-weight:800;font-size:clamp(2.6rem,12vw,4.5rem);line-height:.92;letter-spacing:-.045em}
+h1 em.s{display:block;font-size:1.08em;letter-spacing:-.01em;margin-top:.06em}
+.sub{margin-top:18px;font-size:clamp(1.15rem,4.6vw,1.4rem);font-weight:800;letter-spacing:-.01em}
+.sub span{color:var(--pink)}
+.cue{margin-top:34px;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cue::after{content:"↓";display:block;font-size:1.3rem;letter-spacing:0;margin-top:6px;color:var(--pink);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+.video{margin:14px auto 0;width:100%;max-width:400px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:var(--card);
+  border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(255,46,136,.55);position:relative}
+.video video{width:100%;height:100%;object-fit:cover;display:block}
+.soon{position:absolute;inset:0;display:grid;place-content:center;gap:10px;padding:24px;color:var(--muted)}
+.soon b{font-size:1.6rem;color:var(--ink);letter-spacing:-.02em}
+.invite{margin-top:56px;padding:32px 22px;border-radius:24px;border:1px solid var(--line);background:rgba(255,246,234,.05)}
+.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
+.invite h2{margin-top:10px;font-size:clamp(1.8rem,8vw,2.4rem);line-height:1;letter-spacing:-.035em}
+.step{margin-top:24px;font-size:1.25rem;line-height:1.35;font-weight:800}
+.step .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--pink);color:#fff;font-size:1rem;margin-bottom:10px}
+.step small{display:block;font-weight:500;color:var(--muted);font-size:1rem;margin-top:4px}
+.closer{margin-top:24px;color:var(--muted);font-size:1.05rem}
+.closer strong{color:var(--ink)}
+footer{margin-top:40px;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.cue::after{animation:none}}
 </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="hero-photo"><img src="img/party-1.jpg" alt="Joey mid-celebration" onerror="this.parentNode.remove()"></div>
-  <div class="wrap">
-    <div class="eyebrow">Friday · November 6 · Fort Lauderdale</div>
-    <h1 style="margin-top:16px">Jolly Joey's Pregame <em class="s">Extravaganza</em></h1>
-    <p class="lede">A mystery bar crawl. Nobody knows the next stop until your crew cracks the riddle. Every bar has a challenge and a clock.</p>
-    <div class="chips">
-      <span class="chip">Wine at Joey's 6:00 PM</span>
-      <span class="chip">4 mystery bars</span>
-      <span class="chip">1 happy hour</span>
-      <span class="chip">Comedy show 9:30</span>
-    </div>
-    <div class="count" id="count" aria-live="polite">
-      <div><b id="h">--</b><span>Hours</span></div>
-      <div><b id="m">--</b><span>Min</span></div>
-      <div><b id="sec">--</b><span>Sec</span></div>
-    </div>
-  </div>
-</header>
-
 <main>
-<section id="how">
-  <div class="wrap">
-    <div class="eyebrow">How it works</div>
-    <h2>Solve it, find it, <em class="s">drink</em> it.</h2>
-    <p class="sub">We start with wine at Joey's. At 6:35 he hands out a paper riddle. The answer is your next bar. Get there, do the challenge, collect your points, get the next riddle.</p>
-    <div class="steps">
-      <div class="step reveal"><div class="n">01</div><h3>Crack the riddle</h3><p>Each slip of paper hides the next destination. No phones until you've guessed.</p></div>
-      <div class="step reveal"><div class="n">02</div><h3>Beat the clock</h3><p>About 30 minutes per bar. Enough for a drink and one ridiculous challenge.</p></div>
-      <div class="step reveal"><div class="n">03</div><h3>Rack up points</h3><p>Finish the challenge in time, score. Most points at the end wins the crown.</p></div>
-    </div>
-  </div>
-</section>
+  <h1>Jolly Joey's Pregame <em class="s">Extravaganza</em></h1>
+  <p class="sub">Be there or be square. <span>Let's fucking party.</span></p>
 
-<section id="schedule">
-  <div class="wrap">
-    <div class="eyebrow">Run of show</div>
-    <h2>The night, <em class="s">roughly</em>.</h2>
-    <p class="sub">Bar names stay secret. That's the whole point.</p>
-    <div class="tl">
-      <div class="row reveal"><time>6:00</time><div><h3>Wine at Joey's <span class="tag">Be on time</span></h3><p>Pour a glass, learn the rules, grab your scorecard. Riddle #1 drops at 6:35.</p></div></div>
-      <div class="row reveal"><time>6:45</time><div><h3>Mystery Bar #1 <span class="tag">Happy hour</span></h3><p>Cheap drinks until 7. Challenge one, timer on.</p></div></div>
-      <div class="row reveal"><time>7:25</time><div><h3>Mystery Bar #2</h3><p>Riddle, challenge, timer.</p></div></div>
-      <div class="row reveal"><time>8:00</time><div><h3>Mystery Bar #3</h3><p>The halfway point. Check on the weakest link.</p></div></div>
-      <div class="row reveal"><time>8:30</time><div><h3>Mystery Bar #4</h3><p>Last challenge before the finale.</p></div></div>
-      <div class="row big reveal"><time>9:00</time><div><h3>Tarpon River Brewing</h3><p>Final challenge: the roast. Winner crowned Supreme Commander of Poor Decisions.</p></div></div>
-      <div class="row big reveal"><time>9:30</time><div><h3>Pour Decisions Comedy</h3><p>Sit down, shut up, laugh.</p></div></div>
-    </div>
+  <p class="cue">Watch the video below</p>
+  <div class="video" id="video">
+    <!-- swap in: <video src="invite.mp4" playsinline controls preload="metadata" poster="poster.jpg"></video> -->
+    <div class="soon"><b>Video dropping soon</b><span>Check back in a bit.</span></div>
   </div>
-</section>
 
-<section id="host">
-  <div class="wrap">
-    <div class="eyebrow">Official portraits of the host</div>
-    <h2>Your host, <em class="s">in his element</em>.</h2>
-    <p class="sub">Commissioned for tonight. Totally real. Do not fact-check.</p>
-    <div class="gal" id="gal">
-      <figure class="reveal"><img src="img/party-1.jpg" alt="Joey raising a toast" loading="lazy"><figcaption>The opening toast</figcaption></figure>
-      <figure class="reveal"><img src="img/party-2.jpg" alt="Joey with a stack of riddle cards" loading="lazy"><figcaption>Keeper of the riddles</figcaption></figure>
-      <figure class="reveal"><img src="img/party-3.jpg" alt="Joey with a stopwatch" loading="lazy"><figcaption>Time is a construct. Except tonight.</figcaption></figure>
-      <figure class="reveal"><img src="img/party-4.jpg" alt="Joey crowned champion" loading="lazy"><figcaption>Undisputed Pregame Champion</figcaption></figure>
-      <figure class="reveal"><img src="img/party-5.jpg" alt="Joey on the dance floor" loading="lazy"><figcaption>9:47 PM, probably</figcaption></figure>
-    </div>
-  </div>
-</section>
+  <section class="invite">
+    <div class="eyebrow">Formal invitation with instructions</div>
+    <h2>Your <em class="s">orders</em></h2>
+    <p class="step"><span class="n">1</span><br>Meet at Veneto La Solis, Unit 3506, at 6 PM.<small>Tonight. Friday, November 6.</small></p>
+    <p class="closer">If you're ready to party (party people), <strong>be there or be square</strong>, and all will be revealed once you've arrived.</p>
+  </section>
 
-<section id="points">
-  <div class="wrap">
-    <div class="eyebrow">Scoring</div>
-    <h2>Points <em class="s">mean</em> nothing. Win anyway.</h2>
-    <div class="pts">
-      <div class="pt reveal"><span>Win a challenge</span><b>+10</b></div>
-      <div class="pt reveal"><span>First to solve the riddle</span><b>+5</b></div>
-      <div class="pt reveal"><span>Make the whole group lose it</span><b>+5</b></div>
-      <div class="pt reveal"><span>Win the final roast</span><b>+20</b></div>
-      <div class="pt reveal"><span>Phone out before solving</span><b>−5</b></div>
-      <div class="pt reveal"><span>Joey's mercy ruling</span><b>±?</b></div>
-    </div>
-    <ul class="rules">
-      <li>Water between every bar. Not optional.</li>
-      <li>Nobody walks home alone. Rideshare is the plan.</li>
-      <li>Tip your bartenders. They're part of the game now.</li>
-      <li>Challenges are opt-in. Hype is mandatory.</li>
-      <li>Joey's ruling on points is final and deeply biased.</li>
-      <li>We are seated at 9:30. The comedy waits for no one.</li>
-    </ul>
-  </div>
-</section>
+  <footer>Not a Christmas party. Just jolly.</footer>
 </main>
-
-<footer>
-  <div class="wrap"><b>Jolly Joey's Pregame Extravaganza</b> · Downtown Fort Lauderdale · Friday Nov 6, 2026. Not a Christmas party. Just jolly.</div>
-</footer>
-
-<script>
-// Hide gallery slots whose image hasn't been made
-document.querySelectorAll('#gal img').forEach(img=>{
-  const kill=()=>{img.closest('figure').remove(); if(!document.querySelector('#gal figure')) document.getElementById('host').remove();};
-  if(img.complete && img.naturalWidth===0) kill(); else img.addEventListener('error',kill);
-});
-// Countdown to 6:00 PM Eastern, Nov 6 2026
-(function(){
-  const start=new Date('2026-11-06T18:00:00-05:00').getTime(), end=new Date('2026-11-06T21:30:00-05:00').getTime();
-  const box=document.getElementById('count'), H=document.getElementById('h'), M=document.getElementById('m'), S=document.getElementById('sec');
-  const pad=n=>String(n).padStart(2,'0');
-  function tick(){
-    const now=Date.now();
-    if(now>=start){
-      box.innerHTML = now<end ? '<div><b>It\'s on.</b><span>Find the riddle</span></div>' : '<div><b>Legendary.</b><span>See you next time</span></div>';
-      return;
-    }
-    let t=Math.floor((start-now)/1000);
-    H.textContent=pad(Math.floor(t/3600)); M.textContent=pad(Math.floor(t%3600/60)); S.textContent=pad(t%60);
-    setTimeout(tick,1000);
-  }
-  tick();
-})();
-// Reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
 </body>
 </html>
