@@ -200,7 +200,7 @@ footer b{color:var(--ink)}
 <script>
 // Hide gallery slots whose image hasn't been made
 document.querySelectorAll('#gal img').forEach(img=>{
-  const kill=()=>img.closest('figure').remove();
+  const kill=()=>{img.closest('figure').remove(); if(!document.querySelector('#gal figure')) document.getElementById('host').remove();};
   if(img.complete && img.naturalWidth===0) kill(); else img.addEventListener('error',kill);
 });
 // Countdown to 6:00 PM Eastern, Nov 6 2026
